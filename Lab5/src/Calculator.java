@@ -134,6 +134,7 @@ public class Calculator
     protected static int execute(String[] tokens) throws NumberFormatException, CalculatorException
     {
         // Condition on the number of tokens (number of strings in user input separated by spaces)
+    	int answer = 0;
     	switch(tokens.length)
         {
             // TODO: complete this...
@@ -145,15 +146,17 @@ public class Calculator
         		}		
         break;
         
-        case 2: return calculateTwoTokens(tokens);
+        case 2: answer = calculateTwoTokens(tokens);
+        break;
         
-        
-        case 3: return calculateThreeTokens(tokens);
-        
+        case 3: answer = calculateThreeTokens(tokens);
+        break;
         
         default: throw new CalculatorException("Illegal Command");
         
         }
+    	
+    	return answer;
 
     }
 
