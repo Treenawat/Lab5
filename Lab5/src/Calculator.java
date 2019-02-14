@@ -145,17 +145,15 @@ public class Calculator
         		}		
         break;
         
-        case 2: calculateTwoTokens(tokens);
-        break;
+        case 2: return calculateTwoTokens(tokens);
         
-        case 3: calculateThreeTokens(tokens);
-        break;
+        
+        case 3: return calculateThreeTokens(tokens);
+        
         
         default: throw new CalculatorException("Illegal Command");
         
         }
-    	
-    	
 
     }
 
