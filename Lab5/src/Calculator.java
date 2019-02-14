@@ -36,12 +36,17 @@ public class Calculator
     {
         int a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
         // TODO: complete this...
-        try {
-        	a;
-        }
-        catch{
-        	
-        }
+        String command = tokens[0];
+        	if(command.equalsIgnoreCase("negate")) {
+        		a = -a;
+        	}
+        	if(command.equalsIgnoreCase("halve")) {
+        		a = a/2;
+        	}
+        	if(!command.equalsIgnoreCase("negate") && !command.equalsIgnoreCase("halve")) {
+        		throw new CalculatorException("Your command is invalid");
+        	}
+        return a;
     }
 
     /**
