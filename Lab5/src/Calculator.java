@@ -44,7 +44,7 @@ public class Calculator
         		a = a/2;
         	}
         	if(!command.equalsIgnoreCase("negate") && !command.equalsIgnoreCase("halve")) {
-        		throw new CalculatorException("Your command is invalid");
+        		throw new CalculatorException("Illegal Command");
         	}
         return a;
     }
@@ -81,11 +81,25 @@ public class Calculator
             throws ArithmeticException, NumberFormatException, CalculatorException
     {
         // TODO: complete this...
-    	String command = tokens[0];
-    	int a = Integer.parseInt(tokens[1]);
+    	String command = tokens[1];
+    	int a = Integer.parseInt(tokens[0]);
     	int b = Integer.parseInt(tokens[2]);
+    	int answer = 0;
     	
-    	
+     	if(command == "-") {
+     		answer = a - b;
+     	}
+     	if(command == "+") {
+     		answer = a + b;
+     	}
+     	if(command == "/") {
+     		answer = a / b;
+     	}
+     	if(command != "+" && command != "-" && command != "/") {
+     		throw new CalculatorException("Illegal Command");
+     	}
+     	
+     return answer;
     	
     }
 
@@ -123,6 +137,7 @@ public class Calculator
         switch(tokens.length)
         {
             // TODO: complete this...
+        
         }
 
     }
