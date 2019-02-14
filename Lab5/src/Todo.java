@@ -5,8 +5,8 @@ OU ID_______________: 113470031
 OU EMAIL____________: Treenawat.Manomairat-1@ou.edu
 
 Tasks:
-1. Finish animal and equipment
-2. Finish animaltest, equipmenttest and zootest
+1. Calculator
+2. CalculatorTest
 
 Estimated Time (minutes):
 1. 40

@@ -36,6 +36,12 @@ public class Calculator
     {
         int a = Integer.parseInt(tokens[1]); // Throws NumberFormatException if the second token is not an int value.
         // TODO: complete this...
+        try {
+        	a;
+        }
+        catch{
+        	
+        }
     }
 
     /**
