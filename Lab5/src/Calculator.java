@@ -81,6 +81,12 @@ public class Calculator
             throws ArithmeticException, NumberFormatException, CalculatorException
     {
         // TODO: complete this...
+    	String command = tokens[0];
+    	int a = Integer.parseInt(tokens[1]);
+    	int b = Integer.parseInt(tokens[2]);
+    	
+    	
+    	
     }
 
     /**
