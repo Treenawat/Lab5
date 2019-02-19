@@ -66,6 +66,20 @@ public class CalculatorTest {
     public void calculateTwoTokensTestInvalidCommand() throws AssertException
     {
         // TODO: complete this test...
+    	try
+        {
+            Calculator.calculateTwoTokens(new String[] {"hi", "10"});
+            Assert.fail("Illegal expression did not throw an Exception");
+        }
+        catch (NumberFormatException e)
+        {
+            // We expect the function to throw a NumberFormatException (from failure of Integer.parseInt)
+            // Success; Assert.fail will not be thrown and the code will complete the test, thus succeeding.
+        }
+        catch (Exception e)
+        {
+            Assert.fail("Unexpected Exception (not NumberFormatException) caught");
+        }
     }
 
     /**
@@ -74,6 +88,14 @@ public class CalculatorTest {
     public void calculateThreeTokensTestValidAdd() throws AssertException
     {
         // TODO: complete this test...
+    	try {
+    	int result = Calculator.calculateThreeTokens(new String[] {"4", "+", "5"});
+    	Assert.assertEquals(9, result);
+    	}
+    	catch (Exception e){
+    		Assert.fail("Legal expression threw an Exception: " + e.getMessage());
+    	}
+    	
     }
 
     /**
@@ -82,6 +104,13 @@ public class CalculatorTest {
     public void calculateThreeTokensTestValidSubtract() throws AssertException
     {
         // TODO: complete this test...
+    	try {
+        	int result = Calculator.calculateThreeTokens(new String[] {"6", "-", "2"});
+        	Assert.assertEquals(4, result);
+        	}
+        	catch (Exception e){
+        		Assert.fail("Legal expression threw an Exception: " + e.getMessage());
+        	}
     }
 
     /**
@@ -90,6 +119,13 @@ public class CalculatorTest {
     public void calculateThreeTokensTestValidDivide() throws AssertException
     {
         // TODO: complete this test...
+    	try {
+        	int result = Calculator.calculateThreeTokens(new String[] {"8", "/", "2"});
+        	Assert.assertEquals(4, result);
+        	}
+        	catch (Exception e){
+        		Assert.fail("Legal expression threw an Exception: " + e.getMessage());
+        	}
     }
 
     /**

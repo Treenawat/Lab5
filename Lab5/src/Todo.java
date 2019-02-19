@@ -13,6 +13,6 @@ Estimated Time (minutes):
 2. 60
 
 Actual Time (minutes):
-1. 30
-2. 200
+1. 40
+2. 100
 */}

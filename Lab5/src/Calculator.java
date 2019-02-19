@@ -85,7 +85,7 @@ public class Calculator
     	int a = Integer.parseInt(tokens[0]);
     	int b = Integer.parseInt(tokens[2]);
     	int answer = 0;
-    	
+
      	if(command == "-") {
      		answer = a - b;
      	}
@@ -194,5 +194,35 @@ public class Calculator
         // TODO: complete this...
         // Hint: you should try and call execute(). If execute encounters an error, it will throw an exception. This
         // method will catch those exceptions and respond accordingly.
+    	String[] tokens = input.split(" ");
+    	String calMessage = "";
+    	String arithmeticMessage = "";
+    	String numFormatMessage = "";
+    	int answer = 0;
+    	String answer2 = "";
+    	try{
+    		answer = execute(tokens);
+    	}
+    	catch(CalculatorException e){
+    		calMessage = String.format("Calculator Exception, message is: %s", e.getMessage());
+    		return calMessage;
+    	}
+    	catch(ArithmeticException e){
+    		arithmeticMessage = "Attempted to divide by 0. Please try again.";
+    		return arithmeticMessage;
+    	}
+    	catch (NumberFormatException e)
+        {
+    		numFormatMessage = "Input number cannot be parsed to an int. Please try again.";
+    		return numFormatMessage;
+        }
+    	if (answer == 1) {
+    		System.out.println("quit");
+    		answer2 = "quit";
+    	}
+    	else {
+    		answer2 = String.format("The result is: %d", answer);
+    	}
+    	return answer2;
     }
 }
