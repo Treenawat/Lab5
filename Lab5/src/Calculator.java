@@ -8,6 +8,7 @@
 
 public class Calculator
 {
+
     /**
      * Takes an input command of two string tokens and simulates a calculator command.
      * The token length should never be something either than 2. If it is, there is an issue in execute().
@@ -142,7 +143,7 @@ public class Calculator
         			return Integer.MIN_VALUE;
         		}
         		if(!tokens[0].equalsIgnoreCase("quit")) {
-        			throw new CalculatorException("Illegal Command");
+        			throw new CalculatorException("Illegal Token Length");
         		}		
         break;
         
@@ -152,7 +153,7 @@ public class Calculator
         case 3: answer = calculateThreeTokens(tokens);
         break;
         
-        default: throw new CalculatorException("Illegal Command");
+        default: throw new CalculatorException("Illegal Token Length");
         
         }
     	
